@@ -1,6 +1,6 @@
 public class VendingMachine {
     public int changePort;
-    private int money;
+    public int money;
     private int stock;
 
     public void insetMoney(int money) {
@@ -8,6 +8,9 @@ public class VendingMachine {
     }
 
     public void purchase(String drink) {
+        if (money == 10) {
+            return;
+        }
         this.changePort = this.money - 100;
         this.money = 0;
         stock -= 1;
