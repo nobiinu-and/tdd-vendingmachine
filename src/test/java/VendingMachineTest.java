@@ -50,6 +50,7 @@ public class VendingMachineTest {
     @Test
     void noop_shortage_money() {
         VendingMachine machine = new VendingMachine();
+        machine.addStock("water", 1);
         machine.insetMoney(10);
         assertEquals(10, machine.money);
         machine.purchase("water");
@@ -60,6 +61,7 @@ public class VendingMachineTest {
     @Test
     void noop_shortage_money_another() {
         VendingMachine machine = new VendingMachine();
+        machine.addStock("water", 1);
         machine.insetMoney(50);
         assertEquals(50, machine.money);
         machine.purchase("water");
