@@ -6,8 +6,10 @@ public class VendingMachineTest {
     @Test
     void first_test() {
         VendingMachine machine = new VendingMachine();
+        machine.addStock("water", 1);
         machine.insetMoney(100);
         machine.purchase("water");
+        assertEquals(0, machine.money);
         assertEquals(0, machine.changePort);
     }
 
