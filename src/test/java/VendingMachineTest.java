@@ -14,6 +14,7 @@ public class VendingMachineTest {
     @Test
     void purchase_and_put_change() {
         VendingMachine machine = new VendingMachine();
+        machine.addStock("water", 1);
         machine.insetMoney(100);
         machine.insetMoney(10);
         machine.purchase("water");
@@ -23,6 +24,7 @@ public class VendingMachineTest {
     @Test
     void purchase_twice() {
         VendingMachine machine = new VendingMachine();
+        machine.addStock("water", 2);
         machine.insetMoney(100);
         machine.insetMoney(10);
         machine.purchase("water");
@@ -60,6 +62,16 @@ public class VendingMachineTest {
         assertEquals(50, machine.money);
         machine.purchase("water");
         assertEquals(50, machine.money);
+        assertEquals(0, machine.changePort);
+    }
+
+    @Test
+    void noop_shortage_stock() {
+        VendingMachine machine = new VendingMachine();
+        machine.insetMoney(100);
+        assertEquals(100, machine.money);
+        machine.purchase("water");
+        assertEquals(100, machine.money);
         assertEquals(0, machine.changePort);
     }
 }

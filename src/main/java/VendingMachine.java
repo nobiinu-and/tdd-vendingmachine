@@ -11,6 +11,9 @@ public class VendingMachine {
         if (money < 100) {
             return;
         }
+        if (stock < 1) {
+            return;
+        }
         changePort = money - 100;
         money = 0;
         stock -= 1;
