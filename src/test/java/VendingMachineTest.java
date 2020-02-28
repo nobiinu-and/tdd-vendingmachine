@@ -31,4 +31,15 @@ public class VendingMachineTest {
         machine.purchase("water");
         assertEquals(0, machine.changePort);
     }
+
+    @Test
+    void stock() {
+        VendingMachine machine = new VendingMachine();
+        machine.addStock("water", 2);
+        assertEquals(2, machine.showStock("water"));
+        machine.insetMoney(100);
+        machine.insetMoney(10);
+        machine.purchase("water");
+        assertEquals(1, machine.showStock("water"));
+    }
 }
