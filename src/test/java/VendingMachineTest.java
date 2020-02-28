@@ -8,7 +8,6 @@ public class VendingMachineTest {
         VendingMachine machine = new VendingMachine();
         machine.insetMoney(100);
         machine.purchase("water");
-        assertEquals("water", machine.dispensingSlot);
         assertEquals(0, machine.changePort);
     }
 }
