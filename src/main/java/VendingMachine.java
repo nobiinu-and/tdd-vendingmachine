@@ -8,7 +8,7 @@ public class VendingMachine {
     }
 
     public void purchase(String drink) {
-        if (money == 10) {
+        if (money < 100) {
             return;
         }
         this.changePort = this.money - 100;

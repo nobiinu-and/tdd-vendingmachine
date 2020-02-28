@@ -52,4 +52,14 @@ public class VendingMachineTest {
         assertEquals(10, machine.money);
         assertEquals(0, machine.changePort);
     }
+
+    @Test
+    void noop_shortage_money_another() {
+        VendingMachine machine = new VendingMachine();
+        machine.insetMoney(50);
+        assertEquals(50, machine.money);
+        machine.purchase("water");
+        assertEquals(50, machine.money);
+        assertEquals(0, machine.changePort);
+    }
 }
