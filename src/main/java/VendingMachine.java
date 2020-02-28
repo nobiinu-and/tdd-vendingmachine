@@ -11,8 +11,8 @@ public class VendingMachine {
         if (money < 100) {
             return;
         }
-        this.changePort = this.money - 100;
-        this.money = 0;
+        changePort = money - 100;
+        money = 0;
         stock -= 1;
     }
 
